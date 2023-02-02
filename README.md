@@ -8,15 +8,11 @@ Pet Adoption Application is a platform designed to connect pet lovers with anima
 
 # Features
 
-Browse pets available for adoption
-View detailed information about each pet, including photos and description
-Submit an adoption application
-Receive updates about the status of your adoption application
+Browse pets available for adoption by location and breed.
+View detailed information about each pet, including photos and description.
 
-# Prerequisites
-
-- A modern web browser
-- Internet connection
+#Future Features
+- Convert js, jsx to ts, tsx.
 
 # Technology Stack
 
