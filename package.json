@@ -1,0 +1,23 @@
+{
+  "name": "pawmatch",
+  "version": "1.0.0",
+  "description": "An concept application to help match people and pets together ❤️",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sher85/PawMatch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sher85/PawMatch/issues"
+  },
+  "homepage": "https://github.com/sher85/PawMatch#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
