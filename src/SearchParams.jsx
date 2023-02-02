@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Pet from "./Pet";
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 // Temporary list of breeds until we plug in the API
@@ -9,11 +10,33 @@ const SearchParams = () => {
   const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
   const [breed, setBreed] = useState("");
+  const [pets, setPets] = useState([]);
+
+  // Use Effect for pets
+  useEffect(() => {
+    requestPets();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // API call to request pets
+  async function requestPets() {
+    const res = await fetch(
+      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+    );
+
+    const json = await res.json();
+
+    setPets(json.pets);
+  }
 
   return (
     <div className="search-params">
-      <form>
-        {/* LOCATION */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault(); // preventing actual submit of form
+          requestPets();
+        }}
+      >
+        {/* LOCATION INPUT */}
         <label htmlFor="location">
           Location
           <input
@@ -24,7 +47,7 @@ const SearchParams = () => {
           />
         </label>
 
-        {/* ANIMAL */}
+        {/* ANIMAL DROPDOWN */}
         <label htmlFor="animal">
           Animal
           <select
@@ -41,7 +64,8 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        {/* BREED */}
+
+        {/* BREED DROPDOWN */}
         <label htmlFor="breed">
           Breed
           <select
@@ -57,9 +81,19 @@ const SearchParams = () => {
           </select>
         </label>
 
-        {/* BUTTON */}
+        {/* SUBMIT BUTTON */}
         <button>Submit</button>
       </form>
+
+      {/* PET PROFILES COLUMN */}
+      {pets.map((pet) => (
+        <Pet
+          name={pet.name}
+          animal={pet.animal}
+          breed={pet.breed}
+          key={pet.key}
+        />
+      ))}
     </div>
   );
 };
