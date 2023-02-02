@@ -12,7 +12,8 @@ Browse pets available for adoption by location and breed.
 View detailed information about each pet, including photos and description.
 
 #Future Features
-- Convert js, jsx to ts, tsx.
+- Implement TypeScript.
+- Implement Redux for global state management.
 
 # Technology Stack
 
