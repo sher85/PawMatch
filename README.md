@@ -14,6 +14,7 @@ View detailed information about each pet, including photos and description.
 #Future Features
 - Implement TypeScript.
 - Implement Redux for global state management.
+- Implement unit and system testing.
 
 # Technology Stack
 
