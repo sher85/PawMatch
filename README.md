@@ -21,7 +21,7 @@ View detailed information about each pet, including photos and description.
 - React
 - React-Dom
 - React-Router
-- Node
+- React-Query
 - Vite
 - API: Fake API (to be replaced with a suitable database)
 
