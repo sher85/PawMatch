@@ -24,7 +24,7 @@ export default function useBreedList(animal) {
       setBreedList([]);
       setStatus("loading");
 
-      // Asynchronously request breed list data from API
+      // API Request: breed list data for a specific animal
       const res = await fetch(
         `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
       );

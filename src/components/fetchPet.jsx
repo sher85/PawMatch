@@ -1,7 +1,7 @@
 const fetchPet = async ({ queryKey }) => {
   const id = queryKey[1];
 
-  // Fetch specific pet details from pets API
+  // API Request: specific pet details for a specific id
   const res = await fetch(`http://pets-v2.dev-apis.com/pets?id=${id}`);
 
   if (!res.ok) {
