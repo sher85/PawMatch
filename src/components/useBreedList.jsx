@@ -2,18 +2,20 @@ import { useState, useEffect } from "react";
 
 const localCache = {};
 
+// Custom hook to manage breed list state and fetch data from API
 export default function useBreedList(animal) {
   const [breedlist, setBreedList] = useState([]);
   const [status, setStatus] = useState("unloaded");
 
+  // Effect to fetch breed list data from API or retrieve from local cache
   useEffect(() => {
-    // does animal variable hold a value?
+    // If animal value is not provided -> clear breed list
     if (!animal) {
       setBreedList([]);
-      // else, is the value a key in the local cache?
+      // If animal value is in local cache -> retrieve from cache
     } else if (localCache[animal]) {
       setBreedList(localCache[animal]);
-      // else, request the breeds from the API passing in value of animal
+      // If animal value is not in local cache, fetch from API
     } else {
       requestBreedList();
     }
@@ -22,6 +24,7 @@ export default function useBreedList(animal) {
       setBreedList([]);
       setStatus("loading");
 
+      // Asynchronously request breed list data from API
       const res = await fetch(
         `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
       );
