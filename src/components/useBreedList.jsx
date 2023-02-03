@@ -24,17 +24,15 @@ export default function useBreedList(animal) {
       setBreedList([]);
       setStatus("loading");
 
-      // API Request: breed list data for a specific animal
+      // API Request: Breed list data for a specific animal
       const res = await fetch(
         `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
       );
 
       const json = await res.json();
 
-      // set local cache animal property and if that doesn exist then set to empty array
+      // Update local cache with new data and set breed list to cache value
       localCache[animal] = json.breeds || [];
-
-      // set breedlist to local cache animal
       setBreedList(localCache[animal]);
       setStatus("loaded");
     }
