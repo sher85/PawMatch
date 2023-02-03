@@ -22,7 +22,7 @@ To run the application locally, follow these steps:
 3. Select breed type.
 4. Click the "Submit" button - The application will automatically show you available animals.
 5. Click on an animal for more details.
-6. Click on the "Adopt" button.
+6. Click on the "Adopt" button. (Functionality coming soon!)
 7. Return to the main screen by clicking the top banner.
 
 <img width="997" alt="app-use-1" src="https://user-images.githubusercontent.com/32082005/216514777-cf548c43-b9ff-41ff-84fe-f51f23d7b037.png">
@@ -37,10 +37,13 @@ To run the application locally, follow these steps:
 - **Vite** for code organization and stiching files together, including third party libraries from npm, and optimizing code.
 - API: Fake API (to be replaced with a suitable database)
 
-# Future Features
-- Implement TypeScript.
-- Implement Redux for global state management.
-- Implement unit and system testing.
+# Upcoming Features
+- **Tailwind** for class styling.
+- **React** (extended) lazy loading to provide a fast load time and more fuild user experience.
+- **Node.js/Express.js** for server side rendering ability.
+- **TypeScript** for statically typed code and error detection during refactoring/maintenance.
+- **Redux** for taking over state management in the application (Currently managed by React).
+- **Vitest & happy-dom** for unit and system testing.
 
 # Contributions
 
