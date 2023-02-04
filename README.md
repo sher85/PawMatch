@@ -44,6 +44,7 @@ To run the application locally, follow these steps:
 - **TypeScript** for statically typed code and error detection during refactoring/maintenance.
 - **Redux** for taking over state management in the application (Currently managed by React).
 - **Vitest & happy-dom** for unit and system testing.
+- **TrackJS or NewRelic** for API error logging.
 
 # Contributions
 
