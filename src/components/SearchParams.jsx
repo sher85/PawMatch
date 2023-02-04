@@ -36,7 +36,7 @@ const SearchParams = () => {
         {/* LOCATION INPUT */}
         <label htmlFor="location">
           Location
-          <input name="location" id="location" placeholder="Location" />
+          <input id="location" name="location" placeholder="Location" />
         </label>
 
         {/* ANIMAL DROPDOWN */}
@@ -44,8 +44,11 @@ const SearchParams = () => {
           Animal
           <select
             id="animal"
-            value={animal}
+            name="animal"
             onChange={(e) => {
+              setAnimal(e.target.value);
+            }}
+            onBlur={(e) => {
               setAnimal(e.target.value);
             }}
           >
