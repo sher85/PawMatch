@@ -31,7 +31,7 @@ To run the application locally, follow these steps:
 
 # Technology Stack
 
-- **React** library for building project user interface utilizing reusable components.
+- **React** library for building project user interface utilizing reusable components and API malformatted data error-boundary.
 - **React-Router** for client-side rendering reducing calls to server and improving user experience via page browsing speed.
 - **React-Query** for handling asynchronous state management (fetching, caching, synchronizing, and updating server state).
 - **Vite** for code organization and stiching files together, including third party libraries from npm, and optimizing code.
