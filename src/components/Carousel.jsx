@@ -1,10 +1,12 @@
 import { useState } from "react";
 
+// Define Carousel functional component
 const Carousel = ({
   images = ["http://pets-images.dev-apis.com/pets/none.jpg"],
 }) => {
   const [active, setActive] = useState(0);
 
+  // Define handleIndexClick function
   const handleIndexClick = (event) => {
     // Update active state when handleIndexClick is called
     setActive(+event.target.dataset.index);
