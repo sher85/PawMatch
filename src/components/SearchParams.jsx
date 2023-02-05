@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
+
 import AdoptedPetContext from "./AdoptedPetContext";
 import Results from "./Results";
 import fetchSearch from "../fetchRequests/fetchSearch";
@@ -8,21 +9,31 @@ import useBreedList from "./useBreedList";
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
-  // Hooks
+  // State hook to store request parameters
   const [requestParams, setRequestParams] = useState({
     location: "",
     animal: "",
     breed: "",
   });
+
+  // State hook to store selected animal
   const [animal, setAnimal] = useState("");
+
+  // Custom hook to get list of breeds based on selected animal
   const [breeds] = useBreedList(animal);
+
+  // eslint-disable-next-line no-unused-vars
   const [adoptedPet, _] = useContext(AdoptedPetContext);
 
+  // Query for pet search results
   const results = useQuery(["search", requestParams], fetchSearch);
+
+  // Destructure pets data from query results
   const pets = results?.data?.pets ?? [];
 
   return (
     <div className="search-params">
+      {/* Form */}
       <form
         onSubmit={(e) => {
           e.preventDefault(); // preventing actual submit of form
@@ -32,23 +43,24 @@ const SearchParams = () => {
             location: formData.get("location") ?? "",
             breed: formData.get("breed") ?? "",
           };
+          // Update request parameters state
           setRequestParams(obj);
         }}
       >
-        {/* ADOPTED PET DISPLAY */}
+        {/* Adopted Pet Display */}
         {adoptedPet ? (
           <div className="pet image-container">
             <img src={adoptedPet.images[0]} alt={adoptedPet.name} />
           </div>
         ) : null}
 
-        {/* LOCATION INPUT */}
+        {/* Location Input */}
         <label htmlFor="location">
           Location
           <input id="location" name="location" placeholder="Location" />
         </label>
 
-        {/* ANIMAL DROPDOWN */}
+        {/* Animal Dropdown */}
         <label htmlFor="animal">
           Animal
           <select
@@ -68,7 +80,7 @@ const SearchParams = () => {
           </select>
         </label>
 
-        {/* BREED DROPDOWN */}
+        {/* Breed Dropdown */}
         <label htmlFor="breed">
           Breed
           <select id="breed" disabled={breeds.length === 0} name="breed">
@@ -79,11 +91,11 @@ const SearchParams = () => {
           </select>
         </label>
 
-        {/* SUBMIT BUTTON */}
+        {/* Submit Button */}
         <button>Submit</button>
       </form>
 
-      {/* PET PROFILES COLUMN */}
+      {/* Pet Search Results Column */}
       <Results pets={pets} />
     </div>
   );
