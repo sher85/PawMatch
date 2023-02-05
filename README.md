@@ -37,7 +37,8 @@ To run the application locally, follow these steps:
 - **React-Query** for handling asynchronous state management (fetching, caching, synchronizing, and updating server state).
 - **Vite** for code organization and stiching files together, including third party libraries from npm, and optimizing code.
 - API: Fake API (to be replaced with a suitable database)
-- Portals: Use of portals to create modal in details page upon clicking on "Adopt Me"
+- Portals: Use of portals to create modal in details page upon clicking on "Adopt Me".
+- Lazy Loading and code splitting of Details and Modal to improve application loading times and user experience.
 
 # Upcoming Features
 
