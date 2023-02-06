@@ -35,7 +35,7 @@ To run the application locally, follow these steps:
 - **React** library for building project user interface utilizing reusable components and API malformatted data error-boundary.
 - **React-Router** for client-side rendering reducing calls to server and improving user experience via page browsing speed.
 - **React-Query** for handling asynchronous state management (fetching, caching, synchronizing, and updating server state).
-- **Node.js** for serving of application in a split manner.
+- **Node.js/Express.js** for serving of application in a split manner and server side rendering.
 - **Vite** for code organization and stiching files together, including third party libraries from npm, and optimizing code.
 - API: Fake API (to be replaced with a suitable database)
 - Portals: Use of portals to create modal in details page upon clicking on "Adopt Me".
@@ -44,8 +44,6 @@ To run the application locally, follow these steps:
 # Upcoming Features
 
 - **Tailwind** for class styling.
-- **React** (extended) lazy loading to provide a fast load time and more fuild user experience.
-- **Node.js/Express.js** for server side rendering ability.
 - **TypeScript** for statically typed code and error detection during refactoring/maintenance.
 - **Redux** for taking over state management in the application (Currently managed by React).
 - **Vitest & happy-dom** for unit and system testing.
