@@ -3,7 +3,6 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import renderApp from "../dist/server/ServerApp.js";
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Define the port to listen on
