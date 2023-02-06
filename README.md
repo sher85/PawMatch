@@ -35,10 +35,11 @@ To run the application locally, follow these steps:
 - **React** library for building project user interface utilizing reusable components.
 - **React-Router** for client-side rendering reducing calls to server and improving user experience via page browsing speed.
 - **React-Query** for handling asynchronous state management (fetching, caching, synchronizing, and updating server state).
+- **Node.js** for serving of application in a split manner.
 - **Vite** for code organization and stiching files together, including third party libraries from npm, and optimizing code.
 - API: Fake API (to be replaced with a suitable database)
 - Portals: Use of portals to create modal in details page upon clicking on "Adopt Me".
-- Lazy Loading and code splitting of Details and Modal to improve application loading times and user experience.
+- Lazy Loading and code splitting website to improve application loading times and user experience.
 
 # Upcoming Features
 
