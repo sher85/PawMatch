@@ -7,12 +7,12 @@
   "scripts": {
     "dev": "vite",
     "build:client": "vite build --outDir ../dist/client",
-    "build:server": "vite build --outDir ../dist/server --ssr ServerApp.jsx",
+    "build:server": "vite build --outDir ../dist/server --ssr /serverSideRendering/ServerApp.jsx",
     "build": "npm run build:client && npm run build:server",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
-    "start": "node server.js",
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
