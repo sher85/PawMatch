@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:client": "vite build --outDir ../dist/client",
-    "build:server": "vite build --outDir ../dist/server --ssr /serverSideRendering/ServerApp.jsx",
+    "build:client": "vite build --outDir ../dist/client --emptyOutDir",
+    "build:server": "vite build --outDir ../dist/server --ssr /serverSideRendering/ServerApp.jsx --emptyOutDir",
     "build": "npm run build:client && npm run build:server",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
