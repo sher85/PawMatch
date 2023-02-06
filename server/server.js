@@ -34,7 +34,7 @@ app.use((req, res) => {
   const stream = renderApp(req.url, {
     // Callback when the shell is ready to be rendered
     onShellReady() {
-      stream.pipe(res);
+      stream.pipe(res); // response object + react are being connected -> go to user
     },
 
     // Callback for shell error handling
